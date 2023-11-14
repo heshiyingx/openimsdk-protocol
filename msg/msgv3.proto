@@ -16,7 +16,7 @@ syntax = "proto3";
 package OpenIMServer.msg;
 import "sdkws/sdkws.proto";
 // import "wrapperspb/wrapperspb.proto";
-option go_package = "github.com/OpenIMSDK/protocol/msg";
+option go_package = "github.com/heshiyingx/openimsdk-protocol/msg";
 
 message MsgDataToMQ{
   string token = 1;
@@ -234,16 +234,16 @@ message GetActiveGroupResp {
 }
 
 message SearchMessageReq{
-  string sendID=1;//发送者ID
-  string recvID=2;//接收者ID
-  int32 msgType=3;
-  string sendTime=4;
-  int32 sessionType=5;
+  string sendID = 1;//发送者ID
+  string recvID = 2;//接收者ID
+  int32 msgType = 3;
+  string sendTime = 4;
+  int32 sessionType = 5;
   sdkws.RequestPagination pagination = 6;
 }
 
 message SearchMessageResp{
-  repeated ChatLog chatLogs=1;
+  repeated ChatLog chatLogs = 1;
   int32 chatLogsNum = 2;
 }
 
@@ -267,15 +267,15 @@ message ChatLog {
   int64 sendTime = 16;
   int64 createTime = 17;
   string ex = 18;
-  string groupFaceURL=19;
-  uint32 groupMemberCount=20;
-  int64 seq=21;
-  string groupOwner=22;
-  int32 groupType=23;
+  string groupFaceURL = 19;
+  uint32 groupMemberCount = 20;
+  int64 seq = 21;
+  string groupOwner = 22;
+  int32 groupType = 23;
 }
 
 message batchSendMessageReq{
-  repeated string recvIDList=1;
+  repeated string recvIDList = 1;
   sdkws.MsgData msgData = 2;
 }
 
@@ -285,8 +285,30 @@ message GetServerTimeReq{
 
 }
 message GetServerTimeResp{
-  int64 serverTime=1;
+  int64 serverTime = 1;
 
+}
+
+message PinMsgReq{
+  uint32  type = 1;// 1.消息置顶，2消息取消置顶
+  string  conversationID = 2; // 会话id
+  int64   seq = 3; // 消息seq
+  string  PinMemberID = 4; // 置顶消息所属的userID
+  string  MemberID = 5; //发起置顶消息人的userID
+
+}
+message PinMsgResp{
+}
+
+message QueryPinMsgReq {
+  string  conversationID = 1; // 会话id
+  int64   page = 2;
+  int64  showNum = 3;
+
+}
+message QueryPinMsgResp{
+  repeated ChatLog chatLogs = 1;
+  int64 allNum = 2;
 }
 
 service msg {
@@ -319,10 +341,12 @@ service msg {
   rpc MarkMsgsAsRead(MarkMsgsAsReadReq) returns(MarkMsgsAsReadResp);
   rpc MarkConversationAsRead(MarkConversationAsReadReq) returns(MarkConversationAsReadResp);
   rpc SetConversationHasReadSeq(SetConversationHasReadSeqReq) returns(SetConversationHasReadSeqResp);
-  
+
   rpc GetConversationsHasReadAndMaxSeq(GetConversationsHasReadAndMaxSeqReq) returns(GetConversationsHasReadAndMaxSeqResp);
 
   rpc GetActiveUser(GetActiveUserReq) returns(GetActiveUserResp);
   rpc GetActiveGroup(GetActiveGroupReq) returns(GetActiveGroupResp);
   rpc GetServerTime(GetServerTimeReq) returns(GetServerTimeResp);
+  rpc PinMsg(PinMsgReq)returns(PinMsgResp){};// 消息置顶/取消置顶
+  rpc QueryMsgPin(QueryPinMsgReq) returns(QueryPinMsgResp){};//查询会话置顶的消息
 }
