@@ -16,7 +16,7 @@ package auth
 
 import (
 	"errors"
-	"github.com/heshiyingx/openimsdk-protocol/constant"
+	"github.com/OpenIMSDK/protocol/constant"
 )
 
 func (x *UserTokenReq) Check() error {

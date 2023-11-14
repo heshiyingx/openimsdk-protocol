@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 package OpenIMServer.auth;
-option go_package = "ggithub.com/heshiyingx/openimsdk-protocol/auth";
+option go_package = "github.com/OpenIMSDK/protocol/auth";
 
 
 message userTokenReq {

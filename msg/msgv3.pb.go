@@ -21,7 +21,7 @@
 package msg
 
 import (
-	sdkws "github.com/heshiyingx/openimsdk-protocol/sdkws"
+	sdkws "github.com/OpenIMSDK/protocol/sdkws"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
