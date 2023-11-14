@@ -293,8 +293,9 @@ message PinMsgReq{
   uint32  type = 1;// 1.消息置顶，2消息取消置顶
   string  conversationID = 2; // 会话id
   int64   seq = 3; // 消息seq
-  string  PinMemberID = 4; // 置顶消息所属的userID
-  string  MemberID = 5; //发起置顶消息人的userID
+  string  pinMemberID = 4; // 置顶消息所属的userID
+  string  memberID = 5; //发起置顶消息人的userID
+  int32 senderPlatformID = 6;//平台ID
 
 }
 message PinMsgResp{
