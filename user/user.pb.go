@@ -22,8 +22,8 @@ package user
 
 import (
 	context "context"
-	conversation "github.com/OpenIMSDK/protocol/conversation"
-	sdkws "github.com/OpenIMSDK/protocol/sdkws"
+	conversation "github.com/heshiyingx/openimsdk-protocol/conversation"
+	sdkws "github.com/heshiyingx/openimsdk-protocol/sdkws"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

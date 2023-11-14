@@ -22,8 +22,8 @@ package group
 
 import (
 	context "context"
-	sdkws "github.com/OpenIMSDK/protocol/sdkws"
-	wrapperspb "github.com/OpenIMSDK/protocol/wrapperspb"
+	sdkws "github.com/heshiyingx/openimsdk-protocol/sdkws"
+	wrapperspb "github.com/heshiyingx/openimsdk-protocol/wrapperspb"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

@@ -21,7 +21,7 @@
 package msg
 
 import (
-	sdkws "github.com/OpenIMSDK/protocol/sdkws"
+	sdkws "github.com/heshiyingx/openimsdk-protocol/sdkws"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -3731,7 +3731,7 @@ var file_msg_msgv3_proto_goTypes = []interface{}{
 	(*sdkws.MsgData)(nil),                        // 59: OpenIMServer.sdkws.MsgData
 	(*sdkws.RequestPagination)(nil),              // 60: OpenIMServer.sdkws.RequestPagination
 	(*sdkws.UserInfo)(nil),                       // 61: OpenIMServer.sdkws.UserInfo
-	(*sdkws.GroupInfo)(nil),                      // 62: OpenIMServer.sdkws.GroupInfo
+	(*sdkws.FGroupInfo)(nil),                      // 62: OpenIMServer.sdkws.GroupInfo
 	(*sdkws.GetMaxSeqReq)(nil),                   // 63: OpenIMServer.sdkws.GetMaxSeqReq
 	(*sdkws.PullMessageBySeqsReq)(nil),           // 64: OpenIMServer.sdkws.PullMessageBySeqsReq
 	(*sdkws.GetMaxSeqResp)(nil),                  // 65: OpenIMServer.sdkws.GetMaxSeqResp
