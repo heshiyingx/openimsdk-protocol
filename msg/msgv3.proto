@@ -295,7 +295,8 @@ message PinMsgReq{
   int64   seq = 3; // 消息seq
   string  pinMemberID = 4; // 置顶消息所属的userID
   string  memberID = 5; //发起置顶消息人的userID
-  int32 senderPlatformID = 6;//平台ID
+  int32   senderPlatformID = 6;//平台ID
+  string GroupID=7; // 群id
 
 }
 message PinMsgResp{
