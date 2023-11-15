@@ -242,10 +242,10 @@ func (x *QueryPinMsgReq) Check() error {
 		return errors.New("conversationID is required,and can't be \"\"")
 	}
 	if x.Page == 0 {
-		return errors.New("page is required,and can't be zero")
+		x.Page = 1
 	}
 	if x.ShowNum == 0 {
-		return errors.New("showNum is required,and can't be zero")
+		x.ShowNum = 10
 	}
 	return nil
 }
