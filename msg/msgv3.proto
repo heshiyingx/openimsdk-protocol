@@ -308,7 +308,9 @@ message QueryPinMsgReq {
 }
 message pinMessage {
   sdkws.MsgData msg = 1; // 置顶的源消息
-  sdkws.UserInfo pinUser = 2; //置顶人，(谁置顶的这个消息)
+  sdkws.UserInfo pinUser = 2; //操作者
+  uint32  type = 3;// 1.消息置顶，2消息取消置顶
+
 
 }
 message QueryPinMsgResp{
