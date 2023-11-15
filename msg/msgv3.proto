@@ -294,7 +294,7 @@ message PinMsgReq{
   string  conversationID = 2; // 会话id
   int64   seq = 3; // 消息seq
   int32   senderPlatformID = 4;//平台ID
-  //  string  groupID = 7; // 群id
+  string  groupID = 5; // 群id
 
 }
 message PinMsgResp{
