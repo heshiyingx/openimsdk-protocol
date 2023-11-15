@@ -225,15 +225,7 @@ func (x *PinMsgReq) Check() error {
 	if x.ConversationID == "" {
 		return errors.New("conversationID is required,and can't be \"\"")
 	}
-	//if x.GroupID == "" {
-	//	return errors.New("conversationID is required,and can't be \"\"")
-	//}
-	//if x.PinMemberID == "" {
-	//	return errors.New("pinMemberID is required,and can't be \"\"")
-	//}
-	//if x.MemberID == "" {
-	//	return errors.New("memberID is required,and can't be \"\"")
-	//}
+
 	return nil
 
 }
