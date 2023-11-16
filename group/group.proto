@@ -344,7 +344,7 @@ message GroupCreateCountResp {
 }
 
 message getGroupUsersReqApplicationListReq {
-  string groupID =1;
+  string groupID = 1;
   repeated string userIDs = 2;
 }
 
@@ -354,10 +354,16 @@ message getGroupUsersReqApplicationListResp {
 }
 
 message notificationUserInfoUpdateReq {
-  string userID =1;
+  string userID = 1;
 }
 
 message notificationUserInfoUpdateResp {
+}
+message memberEnterByAnyWay{
+  uint32 type = 1 ; // 1：JoinByAdmin，2：JoinByInvitation 3:JoinBySearch 4.JoinByQRCode
+  sdkws.GroupInfo group = 2;
+  sdkws.PublicUserInfo applicant = 3;
+  sdkws.PublicUserInfo dealUser = 4;
 }
 
 service group{
