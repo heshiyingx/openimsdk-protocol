@@ -4337,7 +4337,7 @@ var file_group_group_proto_rawDesc = []byte{
 	0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x44, 0x12, 0x12, 0x0a,
 	0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x70, 0x61, 0x67,
 	0x65, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x68, 0x6f, 0x77, 0x4e, 0x75, 0x6d, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x03, 0x52, 0x07, 0x73, 0x68, 0x6f, 0x77, 0x4e, 0x75, 0x6d, 0x32, 0xf6, 0x1b, 0x0a, 0x05,
+	0x28, 0x03, 0x52, 0x07, 0x73, 0x68, 0x6f, 0x77, 0x4e, 0x75, 0x6d, 0x32, 0xd2, 0x1c, 0x0a, 0x05,
 	0x67, 0x72, 0x6f, 0x75, 0x70, 0x12, 0x56, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47,
 	0x72, 0x6f, 0x75, 0x70, 0x12, 0x22, 0x2e, 0x4f, 0x70, 0x65, 0x6e, 0x49, 0x4d, 0x53, 0x65, 0x72,
 	0x76, 0x65, 0x72, 0x2e, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
@@ -4561,10 +4561,15 @@ var file_group_group_proto_rawDesc = []byte{
 	0x1a, 0x32, 0x2e, 0x4f, 0x70, 0x65, 0x6e, 0x49, 0x4d, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e,
 	0x67, 0x72, 0x6f, 0x75, 0x70, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x42, 0x25, 0x5a, 0x23, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x4f, 0x70, 0x65, 0x6e, 0x49, 0x4d, 0x53, 0x44, 0x4b, 0x2f, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x73, 0x70, 0x12, 0x5a, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x47, 0x72, 0x6f, 0x75, 0x70,
+	0x53, 0x79, 0x73, 0x4d, 0x73, 0x67, 0x73, 0x12, 0x22, 0x2e, 0x4f, 0x70, 0x65, 0x6e, 0x49, 0x4d,
+	0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x2e, 0x67, 0x72, 0x6f,
+	0x75, 0x70, 0x53, 0x79, 0x73, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x71, 0x1a, 0x23, 0x2e, 0x4f, 0x70,
+	0x65, 0x6e, 0x49, 0x4d, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x67, 0x72, 0x6f, 0x75, 0x70,
+	0x2e, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x53, 0x79, 0x73, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x73, 0x70,
+	0x42, 0x25, 0x5a, 0x23, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4f,
+	0x70, 0x65, 0x6e, 0x49, 0x4d, 0x53, 0x44, 0x4b, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f,
+	0x6c, 0x2f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4738,41 +4743,43 @@ var file_group_group_proto_depIdxs = []int32{
 	64, // 68: OpenIMServer.group.group.GetGroupMemberCache:input_type -> OpenIMServer.group.GetGroupMemberCacheReq
 	66, // 69: OpenIMServer.group.group.GroupCreateCount:input_type -> OpenIMServer.group.GroupCreateCountReq
 	70, // 70: OpenIMServer.group.group.NotificationUserInfoUpdate:input_type -> OpenIMServer.group.notificationUserInfoUpdateReq
-	1,  // 71: OpenIMServer.group.group.createGroup:output_type -> OpenIMServer.group.CreateGroupResp
-	13, // 72: OpenIMServer.group.group.joinGroup:output_type -> OpenIMServer.group.JoinGroupResp
-	17, // 73: OpenIMServer.group.group.quitGroup:output_type -> OpenIMServer.group.QuitGroupResp
-	3,  // 74: OpenIMServer.group.group.getGroupsInfo:output_type -> OpenIMServer.group.GetGroupsInfoResp
-	5,  // 75: OpenIMServer.group.group.setGroupInfo:output_type -> OpenIMServer.group.SetGroupInfoResp
-	7,  // 76: OpenIMServer.group.group.getGroupApplicationList:output_type -> OpenIMServer.group.GetGroupApplicationListResp
-	9,  // 77: OpenIMServer.group.group.getUserReqApplicationList:output_type -> OpenIMServer.group.GetUserReqApplicationListResp
-	69, // 78: OpenIMServer.group.group.getGroupUsersReqApplicationList:output_type -> OpenIMServer.group.getGroupUsersReqApplicationListResp
-	11, // 79: OpenIMServer.group.group.transferGroupOwner:output_type -> OpenIMServer.group.TransferGroupOwnerResp
-	15, // 80: OpenIMServer.group.group.groupApplicationResponse:output_type -> OpenIMServer.group.GroupApplicationResponseResp
-	19, // 81: OpenIMServer.group.group.getGroupMemberList:output_type -> OpenIMServer.group.GetGroupMemberListResp
-	21, // 82: OpenIMServer.group.group.getGroupMembersInfo:output_type -> OpenIMServer.group.GetGroupMembersInfoResp
-	23, // 83: OpenIMServer.group.group.kickGroupMember:output_type -> OpenIMServer.group.KickGroupMemberResp
-	25, // 84: OpenIMServer.group.group.getJoinedGroupList:output_type -> OpenIMServer.group.GetJoinedGroupListResp
-	27, // 85: OpenIMServer.group.group.inviteUserToGroup:output_type -> OpenIMServer.group.InviteUserToGroupResp
-	32, // 86: OpenIMServer.group.group.getGroups:output_type -> OpenIMServer.group.GetGroupsResp
-	35, // 87: OpenIMServer.group.group.getGroupMembersCMS:output_type -> OpenIMServer.group.GetGroupMembersCMSResp
-	37, // 88: OpenIMServer.group.group.dismissGroup:output_type -> OpenIMServer.group.DismissGroupResp
-	39, // 89: OpenIMServer.group.group.muteGroupMember:output_type -> OpenIMServer.group.MuteGroupMemberResp
-	41, // 90: OpenIMServer.group.group.cancelMuteGroupMember:output_type -> OpenIMServer.group.CancelMuteGroupMemberResp
-	43, // 91: OpenIMServer.group.group.muteGroup:output_type -> OpenIMServer.group.MuteGroupResp
-	45, // 92: OpenIMServer.group.group.cancelMuteGroup:output_type -> OpenIMServer.group.CancelMuteGroupResp
-	47, // 93: OpenIMServer.group.group.getJoinedSuperGroupList:output_type -> OpenIMServer.group.GetJoinedSuperGroupListResp
-	49, // 94: OpenIMServer.group.group.getSuperGroupsInfo:output_type -> OpenIMServer.group.GetSuperGroupsInfoResp
-	52, // 95: OpenIMServer.group.group.setGroupMemberInfo:output_type -> OpenIMServer.group.SetGroupMemberInfoResp
-	55, // 96: OpenIMServer.group.group.getGroupAbstractInfo:output_type -> OpenIMServer.group.GetGroupAbstractInfoResp
-	57, // 97: OpenIMServer.group.group.getUserInGroupMembers:output_type -> OpenIMServer.group.GetUserInGroupMembersResp
-	59, // 98: OpenIMServer.group.group.getGroupMemberUserIDs:output_type -> OpenIMServer.group.GetGroupMemberUserIDsResp
-	61, // 99: OpenIMServer.group.group.GetGroupMemberRoleLevel:output_type -> OpenIMServer.group.GetGroupMemberRoleLevelResp
-	63, // 100: OpenIMServer.group.group.GetGroupInfoCache:output_type -> OpenIMServer.group.GetGroupInfoCacheResp
-	65, // 101: OpenIMServer.group.group.GetGroupMemberCache:output_type -> OpenIMServer.group.GetGroupMemberCacheResp
-	67, // 102: OpenIMServer.group.group.GroupCreateCount:output_type -> OpenIMServer.group.GroupCreateCountResp
-	71, // 103: OpenIMServer.group.group.NotificationUserInfoUpdate:output_type -> OpenIMServer.group.notificationUserInfoUpdateResp
-	71, // [71:104] is the sub-list for method output_type
-	38, // [38:71] is the sub-list for method input_type
+	74, // 71: OpenIMServer.group.group.GetGroupSysMsgs:input_type -> OpenIMServer.group.groupSysMsgReq
+	1,  // 72: OpenIMServer.group.group.createGroup:output_type -> OpenIMServer.group.CreateGroupResp
+	13, // 73: OpenIMServer.group.group.joinGroup:output_type -> OpenIMServer.group.JoinGroupResp
+	17, // 74: OpenIMServer.group.group.quitGroup:output_type -> OpenIMServer.group.QuitGroupResp
+	3,  // 75: OpenIMServer.group.group.getGroupsInfo:output_type -> OpenIMServer.group.GetGroupsInfoResp
+	5,  // 76: OpenIMServer.group.group.setGroupInfo:output_type -> OpenIMServer.group.SetGroupInfoResp
+	7,  // 77: OpenIMServer.group.group.getGroupApplicationList:output_type -> OpenIMServer.group.GetGroupApplicationListResp
+	9,  // 78: OpenIMServer.group.group.getUserReqApplicationList:output_type -> OpenIMServer.group.GetUserReqApplicationListResp
+	69, // 79: OpenIMServer.group.group.getGroupUsersReqApplicationList:output_type -> OpenIMServer.group.getGroupUsersReqApplicationListResp
+	11, // 80: OpenIMServer.group.group.transferGroupOwner:output_type -> OpenIMServer.group.TransferGroupOwnerResp
+	15, // 81: OpenIMServer.group.group.groupApplicationResponse:output_type -> OpenIMServer.group.GroupApplicationResponseResp
+	19, // 82: OpenIMServer.group.group.getGroupMemberList:output_type -> OpenIMServer.group.GetGroupMemberListResp
+	21, // 83: OpenIMServer.group.group.getGroupMembersInfo:output_type -> OpenIMServer.group.GetGroupMembersInfoResp
+	23, // 84: OpenIMServer.group.group.kickGroupMember:output_type -> OpenIMServer.group.KickGroupMemberResp
+	25, // 85: OpenIMServer.group.group.getJoinedGroupList:output_type -> OpenIMServer.group.GetJoinedGroupListResp
+	27, // 86: OpenIMServer.group.group.inviteUserToGroup:output_type -> OpenIMServer.group.InviteUserToGroupResp
+	32, // 87: OpenIMServer.group.group.getGroups:output_type -> OpenIMServer.group.GetGroupsResp
+	35, // 88: OpenIMServer.group.group.getGroupMembersCMS:output_type -> OpenIMServer.group.GetGroupMembersCMSResp
+	37, // 89: OpenIMServer.group.group.dismissGroup:output_type -> OpenIMServer.group.DismissGroupResp
+	39, // 90: OpenIMServer.group.group.muteGroupMember:output_type -> OpenIMServer.group.MuteGroupMemberResp
+	41, // 91: OpenIMServer.group.group.cancelMuteGroupMember:output_type -> OpenIMServer.group.CancelMuteGroupMemberResp
+	43, // 92: OpenIMServer.group.group.muteGroup:output_type -> OpenIMServer.group.MuteGroupResp
+	45, // 93: OpenIMServer.group.group.cancelMuteGroup:output_type -> OpenIMServer.group.CancelMuteGroupResp
+	47, // 94: OpenIMServer.group.group.getJoinedSuperGroupList:output_type -> OpenIMServer.group.GetJoinedSuperGroupListResp
+	49, // 95: OpenIMServer.group.group.getSuperGroupsInfo:output_type -> OpenIMServer.group.GetSuperGroupsInfoResp
+	52, // 96: OpenIMServer.group.group.setGroupMemberInfo:output_type -> OpenIMServer.group.SetGroupMemberInfoResp
+	55, // 97: OpenIMServer.group.group.getGroupAbstractInfo:output_type -> OpenIMServer.group.GetGroupAbstractInfoResp
+	57, // 98: OpenIMServer.group.group.getUserInGroupMembers:output_type -> OpenIMServer.group.GetUserInGroupMembersResp
+	59, // 99: OpenIMServer.group.group.getGroupMemberUserIDs:output_type -> OpenIMServer.group.GetGroupMemberUserIDsResp
+	61, // 100: OpenIMServer.group.group.GetGroupMemberRoleLevel:output_type -> OpenIMServer.group.GetGroupMemberRoleLevelResp
+	63, // 101: OpenIMServer.group.group.GetGroupInfoCache:output_type -> OpenIMServer.group.GetGroupInfoCacheResp
+	65, // 102: OpenIMServer.group.group.GetGroupMemberCache:output_type -> OpenIMServer.group.GetGroupMemberCacheResp
+	67, // 103: OpenIMServer.group.group.GroupCreateCount:output_type -> OpenIMServer.group.GroupCreateCountResp
+	71, // 104: OpenIMServer.group.group.NotificationUserInfoUpdate:output_type -> OpenIMServer.group.notificationUserInfoUpdateResp
+	73, // 105: OpenIMServer.group.group.GetGroupSysMsgs:output_type -> OpenIMServer.group.groupSysMsgResp
+	72, // [72:106] is the sub-list for method output_type
+	38, // [38:72] is the sub-list for method input_type
 	38, // [38:38] is the sub-list for extension type_name
 	38, // [38:38] is the sub-list for extension extendee
 	0,  // [0:38] is the sub-list for field type_name

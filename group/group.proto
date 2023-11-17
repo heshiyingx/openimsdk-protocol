@@ -443,6 +443,8 @@ service group{
   rpc GroupCreateCount(GroupCreateCountReq) returns (GroupCreateCountResp);
 
   rpc NotificationUserInfoUpdate(notificationUserInfoUpdateReq)returns(notificationUserInfoUpdateResp);
+  //  查询群的系统消息
+  rpc GetGroupSysMsgs(groupSysMsgReq)returns(groupSysMsgResp);
 }
 
 

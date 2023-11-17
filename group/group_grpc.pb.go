@@ -66,6 +66,7 @@ const (
 	Group_GetGroupMemberCache_FullMethodName             = "/OpenIMServer.group.group/GetGroupMemberCache"
 	Group_GroupCreateCount_FullMethodName                = "/OpenIMServer.group.group/GroupCreateCount"
 	Group_NotificationUserInfoUpdate_FullMethodName      = "/OpenIMServer.group.group/NotificationUserInfoUpdate"
+	Group_GetGroupSysMsgs_FullMethodName                 = "/OpenIMServer.group.group/GetGroupSysMsgs"
 )
 
 // GroupClient is the client API for Group service.
@@ -133,6 +134,8 @@ type GroupClient interface {
 	GetGroupMemberCache(ctx context.Context, in *GetGroupMemberCacheReq, opts ...grpc.CallOption) (*GetGroupMemberCacheResp, error)
 	GroupCreateCount(ctx context.Context, in *GroupCreateCountReq, opts ...grpc.CallOption) (*GroupCreateCountResp, error)
 	NotificationUserInfoUpdate(ctx context.Context, in *NotificationUserInfoUpdateReq, opts ...grpc.CallOption) (*NotificationUserInfoUpdateResp, error)
+	// 查询群的系统消息
+	GetGroupSysMsgs(ctx context.Context, in *GroupSysMsgReq, opts ...grpc.CallOption) (*GroupSysMsgResp, error)
 }
 
 type groupClient struct {
@@ -440,6 +443,15 @@ func (c *groupClient) NotificationUserInfoUpdate(ctx context.Context, in *Notifi
 	return out, nil
 }
 
+func (c *groupClient) GetGroupSysMsgs(ctx context.Context, in *GroupSysMsgReq, opts ...grpc.CallOption) (*GroupSysMsgResp, error) {
+	out := new(GroupSysMsgResp)
+	err := c.cc.Invoke(ctx, Group_GetGroupSysMsgs_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GroupServer is the server API for Group service.
 // All implementations must embed UnimplementedGroupServer
 // for forward compatibility
@@ -505,6 +517,8 @@ type GroupServer interface {
 	GetGroupMemberCache(context.Context, *GetGroupMemberCacheReq) (*GetGroupMemberCacheResp, error)
 	GroupCreateCount(context.Context, *GroupCreateCountReq) (*GroupCreateCountResp, error)
 	NotificationUserInfoUpdate(context.Context, *NotificationUserInfoUpdateReq) (*NotificationUserInfoUpdateResp, error)
+	// 查询群的系统消息
+	GetGroupSysMsgs(context.Context, *GroupSysMsgReq) (*GroupSysMsgResp, error)
 	mustEmbedUnimplementedGroupServer()
 }
 
@@ -610,6 +624,9 @@ func (UnimplementedGroupServer) GroupCreateCount(context.Context, *GroupCreateCo
 }
 func (UnimplementedGroupServer) NotificationUserInfoUpdate(context.Context, *NotificationUserInfoUpdateReq) (*NotificationUserInfoUpdateResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NotificationUserInfoUpdate not implemented")
+}
+func (UnimplementedGroupServer) GetGroupSysMsgs(context.Context, *GroupSysMsgReq) (*GroupSysMsgResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGroupSysMsgs not implemented")
 }
 func (UnimplementedGroupServer) mustEmbedUnimplementedGroupServer() {}
 
@@ -1218,6 +1235,24 @@ func _Group_NotificationUserInfoUpdate_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Group_GetGroupSysMsgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GroupSysMsgReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroupServer).GetGroupSysMsgs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Group_GetGroupSysMsgs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroupServer).GetGroupSysMsgs(ctx, req.(*GroupSysMsgReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Group_ServiceDesc is the grpc.ServiceDesc for Group service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1356,6 +1391,10 @@ var Group_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "NotificationUserInfoUpdate",
 			Handler:    _Group_NotificationUserInfoUpdate_Handler,
+		},
+		{
+			MethodName: "GetGroupSysMsgs",
+			Handler:    _Group_GetGroupSysMsgs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
