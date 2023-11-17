@@ -350,3 +350,19 @@ func (x *GetGroupMemberCacheReq) Check() error {
 	}
 	return nil
 }
+
+func (x *GroupSysMsgReq) Check() error {
+	if x.TargetID == "" {
+		return errors.New("TargetID is empty")
+	}
+	if x.Page == 0 {
+		x.Page = 1
+	}
+	if x.ShowNum <= 0 {
+		x.ShowNum = 10
+	}
+	if x.ShowNum > 30 {
+		x.ShowNum = 30
+	}
+	return nil
+}

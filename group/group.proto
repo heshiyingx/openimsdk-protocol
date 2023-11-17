@@ -365,6 +365,15 @@ message memberEnterByAnyWay{
   sdkws.PublicUserInfo applicant = 3;
   sdkws.PublicUserInfo dealUser = 4;
 }
+message groupSysMsgResp {
+  repeated memberEnterByAnyWay msgs = 1; // 群系统消息
+  int64  total = 2; //总数
+}
+message groupSysMsgReq {
+  string targetID = 1;//查询需要被通知的用户
+  int64  page = 2; //页码1开始
+  int64  showNum = 3; // 每页大小，默认10，最大30
+}
 
 service group{
   //创建群
