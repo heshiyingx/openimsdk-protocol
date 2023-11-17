@@ -3168,8 +3168,8 @@ type QueryPinMsgResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	PinMessages []*PinMessage `protobuf:"bytes,1,rep,name=pinMessages,proto3" json:"pinMessages,omitempty"`
-	AllNum      int64         `protobuf:"varint,2,opt,name=allNum,proto3" json:"allNum,omitempty"`
+	PinMessages []*PinMessage `protobuf:"bytes,1,rep,name=pinMessages,proto3" json:"pinMessages"`
+	AllNum      int64         `protobuf:"varint,2,opt,name=allNum,proto3" json:"allNum"`
 }
 
 func (x *QueryPinMsgResp) Reset() {
