@@ -177,16 +177,25 @@ message SearchLogsResp{
 message UploadImgPreSignReq{
   string fileName = 1; // 文件名
   string contentType = 2; // content_type
+  string cause = 3;//pub_config
+
 }
 message UploadImgPreSignResp{
   string objServerName = 1;
   string preSignUrl = 2;
+  string contentType = 3; // content_type
+  string cause = 4;//pub_config
+  string hash = 5;
 }
 message UploadImgCompletedReq{
   string objServerName = 1;
+  string contentType = 2; // content_type
+  string cause = 3;//pub_config
+  string hash = 4;
 }
 message UploadImgCompletedResp{
   string url = 1; // 上传完成的访问url
+
 }
 service third {
   rpc PartLimit(PartLimitReq) returns(PartLimitResp);
