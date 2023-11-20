@@ -35,3 +35,19 @@ func (x *SetAppBadgeReq) Check() error {
 	}
 	return nil
 }
+
+func (x *UploadImgPreSignReq) Check() error {
+	if x.FileName == "" {
+		return errors.New("FileName is empty")
+	}
+	if x.ContentType == "" {
+		return errors.New("ContentType is empty")
+	}
+	return nil
+}
+func (x *UploadImgCompletedReq) Check() error {
+	if x.ObjServerName == "" {
+		return errors.New("ObjServerName is empty")
+	}
+	return nil
+}
