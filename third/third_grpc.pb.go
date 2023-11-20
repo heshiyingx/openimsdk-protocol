@@ -67,7 +67,7 @@ type ThirdClient interface {
 	// UploadImgPreSign 上传图片
 	UploadImgPreSign(ctx context.Context, in *UploadImgPreSignReq, opts ...grpc.CallOption) (*UploadImgPreSignResp, error)
 	// UploadImgCompleted 上传完成获取访问url(目的：防止客户端图片未上传成功，因此，未在签名时返回访问url)
-	UploadImgCompleted(ctx context.Context, in *UploadImgPreSignReq, opts ...grpc.CallOption) (*UploadImgCompletedResp, error)
+	UploadImgCompleted(ctx context.Context, in *UploadImgCompletedReq, opts ...grpc.CallOption) (*UploadImgCompletedResp, error)
 }
 
 type thirdClient struct {
@@ -186,7 +186,7 @@ func (c *thirdClient) UploadImgPreSign(ctx context.Context, in *UploadImgPreSign
 	return out, nil
 }
 
-func (c *thirdClient) UploadImgCompleted(ctx context.Context, in *UploadImgPreSignReq, opts ...grpc.CallOption) (*UploadImgCompletedResp, error) {
+func (c *thirdClient) UploadImgCompleted(ctx context.Context, in *UploadImgCompletedReq, opts ...grpc.CallOption) (*UploadImgCompletedResp, error) {
 	out := new(UploadImgCompletedResp)
 	err := c.cc.Invoke(ctx, Third_UploadImgCompleted_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -214,7 +214,7 @@ type ThirdServer interface {
 	// UploadImgPreSign 上传图片
 	UploadImgPreSign(context.Context, *UploadImgPreSignReq) (*UploadImgPreSignResp, error)
 	// UploadImgCompleted 上传完成获取访问url(目的：防止客户端图片未上传成功，因此，未在签名时返回访问url)
-	UploadImgCompleted(context.Context, *UploadImgPreSignReq) (*UploadImgCompletedResp, error)
+	UploadImgCompleted(context.Context, *UploadImgCompletedReq) (*UploadImgCompletedResp, error)
 	mustEmbedUnimplementedThirdServer()
 }
 
@@ -258,7 +258,7 @@ func (UnimplementedThirdServer) SearchLogs(context.Context, *SearchLogsReq) (*Se
 func (UnimplementedThirdServer) UploadImgPreSign(context.Context, *UploadImgPreSignReq) (*UploadImgPreSignResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadImgPreSign not implemented")
 }
-func (UnimplementedThirdServer) UploadImgCompleted(context.Context, *UploadImgPreSignReq) (*UploadImgCompletedResp, error) {
+func (UnimplementedThirdServer) UploadImgCompleted(context.Context, *UploadImgCompletedReq) (*UploadImgCompletedResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadImgCompleted not implemented")
 }
 func (UnimplementedThirdServer) mustEmbedUnimplementedThirdServer() {}
@@ -491,7 +491,7 @@ func _Third_UploadImgPreSign_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _Third_UploadImgCompleted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UploadImgPreSignReq)
+	in := new(UploadImgCompletedReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -503,7 +503,7 @@ func _Third_UploadImgCompleted_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: Third_UploadImgCompleted_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdServer).UploadImgCompleted(ctx, req.(*UploadImgPreSignReq))
+		return srv.(ThirdServer).UploadImgCompleted(ctx, req.(*UploadImgCompletedReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }

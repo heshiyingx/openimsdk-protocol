@@ -205,7 +205,7 @@ service third {
   //  UploadImgPreSign 上传图片
   rpc UploadImgPreSign(UploadImgPreSignReq)returns (UploadImgPreSignResp){};
   // UploadImgCompleted 上传完成获取访问url(目的：防止客户端图片未上传成功，因此，未在签名时返回访问url)
-  rpc UploadImgCompleted(UploadImgPreSignReq)returns (UploadImgCompletedResp){};
+  rpc UploadImgCompleted(UploadImgCompletedReq)returns (UploadImgCompletedResp){};
 }
 
 
