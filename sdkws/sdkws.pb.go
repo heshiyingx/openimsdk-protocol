@@ -516,9 +516,9 @@ type PublicUserInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserID          string `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
-	Nickname        string `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname,omitempty"`
-	FaceURL         string `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL,omitempty"`
+	UserID          string `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID"`
+	Nickname        string `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname"`
+	FaceURL         string `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL"`
 	Ex              string `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex,omitempty"`
 	LastOfflineTime int64  `protobuf:"varint,5,opt,name=lastOfflineTime,proto3" json:"lastOfflineTime,omitempty"`
 }
@@ -595,11 +595,11 @@ type UserInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserID           string `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
-	Nickname         string `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname,omitempty"`
-	FaceURL          string `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL,omitempty"`
-	Ex               string `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex,omitempty"`
-	CreateTime       int64  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime,omitempty"`
+	UserID           string `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID"`
+	Nickname         string `protobuf:"bytes,2,opt,name=nickname,proto3" json:"nickname"`
+	FaceURL          string `protobuf:"bytes,3,opt,name=faceURL,proto3" json:"faceURL"`
+	Ex               string `protobuf:"bytes,4,opt,name=ex,proto3" json:"ex"`
+	CreateTime       int64  `protobuf:"varint,5,opt,name=createTime,proto3" json:"createTime"`
 	AppMangerLevel   int32  `protobuf:"varint,6,opt,name=appMangerLevel,proto3" json:"appMangerLevel,omitempty"`
 	GlobalRecvMsgOpt int32  `protobuf:"varint,7,opt,name=globalRecvMsgOpt,proto3" json:"globalRecvMsgOpt,omitempty"`
 	LastOfflineTime  int64  `protobuf:"varint,8,opt,name=lastOfflineTime,proto3" json:"lastOfflineTime,omitempty"`
