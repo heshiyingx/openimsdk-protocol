@@ -65,6 +65,7 @@ message GroupMemberFullInfo {
   string ex = 10;
   int64 muteEndTime = 11;
   string inviterUserID = 12;
+  int64 lastOfflineTime = 13;
 }
 
 message PublicUserInfo{
@@ -72,6 +73,7 @@ message PublicUserInfo{
   string nickname = 2;
   string faceURL = 3;
   string ex = 4;
+  int64  lastOfflineTime = 5;
 }
 
 message UserInfo{
@@ -82,6 +84,7 @@ message UserInfo{
   int64 createTime = 5;
   int32 appMangerLevel = 6;
   int32 globalRecvMsgOpt = 7;
+  int64 lastOfflineTime = 8;
 }
 
 message FriendInfo{
