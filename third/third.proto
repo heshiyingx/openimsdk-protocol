@@ -158,21 +158,46 @@ message SearchLogsReq{
 
 
 message LogInfo{
-  string userID=1;
-  int32 platform=2;
-  string url=3;
-  int64 createTime=4;
-  string nickname=5;
-  string logID=6;
-  string filename=7;
-  string systemType=8;
-  string ex=9;
-  string version=10;
+  string userID = 1;
+  int32 platform = 2;
+  string url = 3;
+  int64 createTime = 4;
+  string nickname = 5;
+  string logID = 6;
+  string filename = 7;
+  string systemType = 8;
+  string ex = 9;
+  string version = 10;
 }
 
 message SearchLogsResp{
   repeated LogInfo logsInfos = 1;
   uint32 total = 2;
+}
+message UploadImgPreSignReq{
+  string fileName = 1; // 文件名
+  string contentType = 2; // content_type
+  string cause = 3;//pub_config
+
+}
+message UploadImgPreSignResp{
+  string objServerName = 1;
+  string preSignUrl = 2;
+  string contentType = 3; // content_type
+  string cause = 4;//pub_config
+  string key = 5;
+  string hash = 6;
+}
+message UploadImgCompletedReq{
+  string objServerName = 1;
+  string contentType = 2; // content_type
+  string cause = 3;//pub_config
+  string key = 4;
+  string hash = 5;
+}
+message UploadImgCompletedResp{
+  string url = 1; // 上传完成的访问url
+
 }
 
 service third {
@@ -189,6 +214,11 @@ service third {
   rpc UploadLogs(UploadLogsReq) returns (UploadLogsResp);
   rpc DeleteLogs(DeleteLogsReq) returns (DeleteLogsResp);
   rpc SearchLogs(SearchLogsReq) returns (SearchLogsResp);
+  //  UploadImgPreSign 上传图片
+  rpc UploadImgPreSign(UploadImgPreSignReq) returns (UploadImgPreSignResp){};
+  // UploadImgCompleted 上传完成获取访问url(目的：防止客户端图片未上传成功，因此，未在签名时返回访问url)
+  rpc UploadImgCompleted(UploadImgCompletedReq) returns (UploadImgCompletedResp){};
+
 }
 
 

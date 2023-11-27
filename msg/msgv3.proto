@@ -288,6 +288,34 @@ message GetServerTimeResp{
   int64 serverTime=1;
 
 }
+message PinMsgReq{
+  uint32  type = 1;// 1.消息置顶，2消息取消置顶
+  string  conversationID = 2; // 会话id
+  int64   seq = 3; // 消息seq
+  int32   senderPlatformID = 4;//平台ID
+  string  groupID = 5; // 群id
+
+}
+message PinMsgResp{
+}
+
+message QueryPinMsgReq {
+  string  conversationID = 1; // 会话id
+  int64   page = 2; // 默认为1
+  int64  showNum = 3; // 默认为10，最大20
+
+}
+message pinMessage {
+  sdkws.MsgData msg = 1; // 置顶的源消息
+  sdkws.UserInfo pinUser = 2; //操作者
+  uint32  type = 3;// 1.消息置顶，2消息取消置顶
+
+
+}
+message QueryPinMsgResp{
+  repeated pinMessage pinMessages = 1;
+  int64 allNum = 2;
+}
 
 service msg {
   //获取最小最大seq（包括用户的，以及指定群组的）
@@ -325,4 +353,9 @@ service msg {
   rpc GetActiveUser(GetActiveUserReq) returns(GetActiveUserResp);
   rpc GetActiveGroup(GetActiveGroupReq) returns(GetActiveGroupResp);
   rpc GetServerTime(GetServerTimeReq) returns(GetServerTimeResp);
+  // 消息置顶/取消置顶
+  rpc PinMsg(PinMsgReq)returns(PinMsgResp){};
+  //查询会话置顶的消息
+  rpc QueryMsgPin(QueryPinMsgReq) returns(QueryPinMsgResp){};
+
 }

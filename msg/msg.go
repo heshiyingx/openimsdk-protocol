@@ -215,3 +215,29 @@ func (x *GetConversationsHasReadAndMaxSeqReq) Check() error {
 	}
 	return nil
 }
+func (x *PinMsgReq) Check() error {
+	if x.Type == 0 {
+		return errors.New("type is required,and can't be zero")
+	}
+	if x.Seq == 0 {
+		return errors.New("seq is required,and can't be zero")
+	}
+	if x.ConversationID == "" {
+		return errors.New("conversationID is required,and can't be empty")
+	}
+
+	return nil
+
+}
+func (x *QueryPinMsgReq) Check() error {
+	if x.ConversationID == "" {
+		return errors.New("conversationID is required,and can't be empty")
+	}
+	if x.Page == 0 {
+		x.Page = 1
+	}
+	if x.ShowNum == 0 {
+		x.ShowNum = 10
+	}
+	return nil
+}

@@ -345,7 +345,7 @@ message GroupCreateCountResp {
 }
 
 message getGroupUsersReqApplicationListReq {
-  string groupID =1;
+  string groupID = 1;
   repeated string userIDs = 2;
 }
 
@@ -355,11 +355,27 @@ message getGroupUsersReqApplicationListResp {
 }
 
 message notificationUserInfoUpdateReq {
-  string userID =1;
+  string userID = 1;
 }
 
 message notificationUserInfoUpdateResp {
 }
+message memberEnterByAnyWay{
+  uint32 type = 1 ; // 1：JoinByAdmin，2：JoinByInvitation 3:JoinBySearch 4.JoinByQRCode
+  sdkws.GroupInfo group = 2;
+  sdkws.PublicUserInfo applicant = 3;
+  sdkws.PublicUserInfo dealUser = 4;
+}
+message groupSysMsgResp {
+  repeated memberEnterByAnyWay msgs = 1; // 群系统消息
+  int64  total = 2; //总数
+}
+message groupSysMsgReq {
+  string targetID = 1;//查询需要被通知的用户
+  int64  page = 2; //页码1开始
+  int64  showNum = 3; // 每页大小，默认10，最大30
+}
+
 
 service group{
   //创建群
@@ -429,6 +445,9 @@ service group{
   rpc GroupCreateCount(GroupCreateCountReq) returns (GroupCreateCountResp);
 
   rpc NotificationUserInfoUpdate(notificationUserInfoUpdateReq)returns(notificationUserInfoUpdateResp);
+  //  查询群的系统消息
+  rpc GetGroupSysMsgs(groupSysMsgReq)returns(groupSysMsgResp);
+
 }
 
 
