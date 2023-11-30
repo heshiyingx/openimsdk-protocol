@@ -3802,8 +3802,8 @@ type GroupSysMsgResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Msgs  []*MemberEnterByAnyWay `protobuf:"bytes,1,rep,name=msgs,proto3" json:"msgs"`    // 群系统消息
-	Total int64                  `protobuf:"varint,2,opt,name=total,proto3" json:"total"` //总数
+	Msgs  []*MemberEnterByAnyWay `protobuf:"bytes,1,rep,name=msgs,proto3" json:"msgs,omitempty"`    // 群系统消息
+	Total int64                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"` //总数
 }
 
 func (x *GroupSysMsgResp) Reset() {
