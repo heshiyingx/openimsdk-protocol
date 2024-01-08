@@ -85,6 +85,7 @@ message UserInfo{
   int32 appMangerLevel = 6;
   int32 globalRecvMsgOpt = 7;
   int64 lastOfflineTime = 8;
+  int64  LastOfflinePlatformID = 9;
 }
 
 message FriendInfo{
