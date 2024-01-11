@@ -28,18 +28,20 @@ const (
 	AndroidPadPlatformID = 8
 	IPadPlatformID       = 9
 	AdminPlatformID      = 10
+	H5ID                 = 11
 
 	// Platform string match to Platform ID.
 	IOSPlatformStr        = "IOS"
 	AndroidPlatformStr    = "Android"
 	WindowsPlatformStr    = "Windows"
-	OSXPlatformStr        = "OSX"
+	OSXPlatformStr        = "Mac"
 	WebPlatformStr        = "Web"
 	MiniWebPlatformStr    = "MiniWeb"
 	LinuxPlatformStr      = "Linux"
 	AndroidPadPlatformStr = "APad"
 	IPadPlatformStr       = "IPad"
 	AdminPlatformStr      = "Admin"
+	H5Str                 = "H5"
 
 	// terminal types.
 	TerminalPC     = "PC"
@@ -57,6 +59,7 @@ var PlatformID2Name = map[int]string{
 	AndroidPadPlatformID: AndroidPadPlatformStr,
 	IPadPlatformID:       IPadPlatformStr,
 	AdminPlatformID:      AdminPlatformStr,
+	H5ID:                 H5Str,
 }
 
 var PlatformName2ID = map[string]int{
@@ -70,6 +73,7 @@ var PlatformName2ID = map[string]int{
 	AndroidPadPlatformStr: AndroidPadPlatformID,
 	IPadPlatformStr:       IPadPlatformID,
 	AdminPlatformStr:      AdminPlatformID,
+	H5Str:                 H5ID,
 }
 
 var PlatformName2class = map[string]string{
@@ -77,6 +81,7 @@ var PlatformName2class = map[string]string{
 	AndroidPlatformStr: TerminalMobile,
 	MiniWebPlatformStr: WebPlatformStr,
 	WebPlatformStr:     WebPlatformStr,
+	H5Str:              WebPlatformStr,
 	WindowsPlatformStr: TerminalPC,
 	OSXPlatformStr:     TerminalPC,
 	LinuxPlatformStr:   TerminalPC,
@@ -87,6 +92,7 @@ var PlatformID2class = map[int]string{
 	AndroidPlatformID: TerminalMobile,
 	MiniWebPlatformID: WebPlatformStr,
 	WebPlatformID:     WebPlatformStr,
+	H5ID:              WebPlatformStr,
 	WindowsPlatformID: TerminalPC,
 	OSXPlatformID:     TerminalPC,
 	LinuxPlatformID:   TerminalPC,
