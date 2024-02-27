@@ -155,6 +155,7 @@ message SeqRange {
   int64 begin = 2;
   int64 end = 3;
   int64 num = 4;
+  bool ignoreUserMinSeq = 5;
 }
 
 message PullMsgs {
